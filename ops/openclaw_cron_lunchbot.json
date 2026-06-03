@@ -1,0 +1,21 @@
+{
+  "name": "LunchBot daily lunch options",
+  "enabled": true,
+  "schedule": {
+    "kind": "cron",
+    "expr": "0 11 * * 1-5",
+    "tz": "Europe/Berlin"
+  },
+  "sessionTarget": "isolated",
+  "wakeMode": "now",
+  "payload": {
+    "kind": "agentTurn",
+    "message": "LunchBot turn only. Read <LUNCHBOT_DATA_DIR>/raw_feed.md. Do not run scrapers. Format today's lunch options in concise English for WhatsApp. Send one WhatsApp group text summary to <WHATSAPP_GROUP_JID> using openclaw message send --channel whatsapp --target <WHATSAPP_GROUP_JID> --message. Then send a WhatsApp poll to the same group using openclaw message poll --channel whatsapp --target <WHATSAPP_GROUP_JID> --poll-question 'Lunch today?' with 2-12 short option names from the feed. Do not create agents and do not send DMs.",
+    "timeoutSeconds": 600,
+    "lightContext": true
+  },
+  "delivery": {
+    "mode": "none",
+    "channel": "last"
+  }
+}

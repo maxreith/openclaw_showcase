@@ -1,0 +1,2 @@
+CRON_TZ=Europe/Berlin
+50 10 * * 1-5 DELIVERY_API_REPO=/path/to/delivery_api LUNCHBOT_DATA_DIR=/path/to/lunchbot-data /path/to/delivery_api/ops/lunchbot_refresh_cache.sh
